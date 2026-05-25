@@ -1,0 +1,684 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Keyframes, Utilities & Scroll Animations
+   Portfolio: Farros — Full-Stack Developer & Network Engineer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   @keyframes — Core Entrance Animations
+   -------------------------------------------------------------------------- */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   @keyframes — Toast / Slide Animations
+   -------------------------------------------------------------------------- */
+
+/* Slide In Right (toast enter) */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide Out Right (toast exit) */
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   @keyframes — Scale & Transform
+   -------------------------------------------------------------------------- */
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale In Bounce (spring feel) */
+@keyframes scaleInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   @keyframes — Looping / Ambient Animations
+   -------------------------------------------------------------------------- */
+
+/* Float (gentle up/down loop) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Pulse (gentle scale pulse) */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Glow (accent color glow pulse) */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3),
+                0 0 24px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.5),
+                0 0 48px rgba(99, 102, 241, 0.2);
+  }
+}
+
+/* Typing Cursor Blink */
+@keyframes typing {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Gradient Shift (background position animation) */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rotate (continuous spin) */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 20%, 53%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translateY(-16px);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-4px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Animation Utility Classes
+   -------------------------------------------------------------------------- */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-down {
+  animation: fadeInDown 0.6s ease-out both;
+}
+
+.animate-fade-left {
+  animation: fadeInLeft 0.6s ease-out both;
+}
+
+.animate-fade-right {
+  animation: fadeInRight 0.6s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1.5s ease-in-out;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-rotate {
+  animation: rotate 8s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll-Triggered Animations
+   -------------------------------------------------------------------------- */
+
+/* Initial state (before element is visible) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Animated state (when element enters viewport) */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Direction variants for scroll animations */
+.animate-on-scroll.from-left {
+  transform: translateX(-30px);
+}
+
+.animate-on-scroll.from-left.visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.from-right {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll.from-right.visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.from-scale {
+  transform: scale(0.9);
+}
+
+.animate-on-scroll.from-scale.visible {
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   Stagger Delay Classes
+   -------------------------------------------------------------------------- */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
+
+/* Animation delay utility (for keyframe-based animations) */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* --------------------------------------------------------------------------
+   Hover Effects
+   -------------------------------------------------------------------------- */
+
+/* Hover Lift */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hover Glow */
+.hover-glow {
+  transition: box-shadow var(--transition-base);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Hover Glow Accent */
+.hover-glow-accent {
+  transition: box-shadow var(--transition-base);
+}
+
+.hover-glow-accent:hover {
+  box-shadow: var(--shadow-glow-accent);
+}
+
+/* Hover Scale */
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Hover Rotate */
+.hover-tilt:hover {
+  transform: perspective(600px) rotateY(-3deg);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Background — Particles & Geometric Shapes
+   -------------------------------------------------------------------------- */
+
+/* Background container for hero visual effects */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Gradient orbs */
+.hero-bg .orb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.hero-bg .orb-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-primary);
+  top: -15%;
+  right: -10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-bg .orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-secondary);
+  bottom: -10%;
+  left: -5%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.hero-bg .orb-3 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-tertiary);
+  top: 50%;
+  left: 40%;
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+/* Grid pattern overlay */
+.hero-bg .grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    black 20%,
+    transparent 70%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    black 20%,
+    transparent 70%
+  );
+}
+
+/* Floating geometric shapes */
+.hero-bg .geo-shape {
+  position: absolute;
+  opacity: 0.08;
+  border: 2px solid var(--accent-primary);
+}
+
+.hero-bg .geo-shape.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  top: 20%;
+  right: 15%;
+  animation: float 6s ease-in-out infinite, rotate 20s linear infinite;
+}
+
+.hero-bg .geo-shape.square {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  bottom: 25%;
+  right: 25%;
+  animation: float 5s ease-in-out infinite 1s, rotate 15s linear infinite reverse;
+}
+
+.hero-bg .geo-shape.triangle {
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 52px solid rgba(99, 102, 241, 0.08);
+  top: 40%;
+  left: 10%;
+  animation: float 7s ease-in-out infinite 0.5s;
+}
+
+/* Particle dots */
+.hero-bg .particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  opacity: 0.3;
+}
+
+.hero-bg .particle:nth-child(1) { top: 15%; left: 20%; animation: float 5s ease-in-out infinite 0s; }
+.hero-bg .particle:nth-child(2) { top: 35%; left: 70%; animation: float 6s ease-in-out infinite 1s; }
+.hero-bg .particle:nth-child(3) { top: 65%; left: 15%; animation: float 4s ease-in-out infinite 2s; }
+.hero-bg .particle:nth-child(4) { top: 80%; left: 55%; animation: float 7s ease-in-out infinite 0.5s; }
+.hero-bg .particle:nth-child(5) { top: 25%; left: 85%; animation: float 5s ease-in-out infinite 1.5s; }
+.hero-bg .particle:nth-child(6) { top: 50%; left: 40%; animation: float 6s ease-in-out infinite 3s; }
+
+/* --------------------------------------------------------------------------
+   Typing Cursor
+   -------------------------------------------------------------------------- */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: var(--accent-primary);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: typing 0.8s step-end infinite;
+  border-radius: 1px;
+}
+
+.typing-text {
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Gradient Text Animation
+   -------------------------------------------------------------------------- */
+.gradient-text-animated {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary),
+    var(--accent-tertiary),
+    var(--accent-primary)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Line Draw Animation (for decorative borders)
+   -------------------------------------------------------------------------- */
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.draw-line {
+  position: relative;
+}
+
+.draw-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-full);
+  animation: drawLine 0.8s ease-out forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Counter / Number Tick Animation
+   -------------------------------------------------------------------------- */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-up {
+  animation: countUp 0.5s ease-out both;
+}
+
+/* --------------------------------------------------------------------------
+   Loading Skeleton
+   -------------------------------------------------------------------------- */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    var(--bg-card-hover) 50%,
+    var(--bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: var(--space-sm);
+}
+
+.skeleton-title {
+  height: 1.5em;
+  width: 60%;
+  margin-bottom: var(--space-md);
+}
+
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+/* --------------------------------------------------------------------------
+   Page Transition
+   -------------------------------------------------------------------------- */
+.page-transition {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion — Accessibility
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-float,
+  .animate-pulse,
+  .animate-glow,
+  .animate-bounce,
+  .animate-gradient,
+  .animate-rotate,
+  .animate-shimmer {
+    animation: none;
+  }
+
+  .hero-bg .orb,
+  .hero-bg .geo-shape,
+  .hero-bg .particle {
+    animation: none;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+}
